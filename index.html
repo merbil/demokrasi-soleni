@@ -9,3 +9,344 @@
     <p>Sıralı tam liste</p>
   </body>
 </html>
+
+
+<center>
+<embed>
+
+ <div id="consulate-finder" class="d-flex justify-content-center align-items-center">
+  <div class="form-group mr-3">
+    <select id="ulke-dropdown" class="form-control" style="font-size: 20px; padding: 10px;">
+      <option value="">Ülke</option>
+     
+<option value="Almanya">Almanya</option>
+<option value="A.B.D">A.B.D</option>
+<option value="Arnavutluk">Arnavutluk</option>
+<option value="Avustralya">Avustralya</option>
+<option value="Avusturya">Avusturya</option>
+<option value="Azerbaycan">Azerbaycan</option>
+<option value="Bahreyn">Bahreyn</option>
+<option value="Belarus">Belarus</option>
+<option value="Belçika">Belçika</option>
+<option value="Birleşik Arap Emirlikleri">Birleşik Arap Emirlikleri</option>
+<option value="Bosna Hersek">Bosna Hersek</option>
+<option value="Brezilya Federatif Cumhuriyeti">Brezilya Federatif Cumhuriyeti</option>
+<option value="Bulgaristan">Bulgaristan</option>
+<option value="Büyük Britanya Ve Kuzey Irlanda Birleşik Kiralliği">Büyük Britanya Ve Kuzey Irlanda Birleşik Kiralliği</option>
+<option value="Cezayir">Cezayir</option>
+<option value="Çekya">Çekya</option>
+<option value="Çin Halk Cumhuriyeti">Çin Halk Cumhuriyeti</option>
+<option value="Danimarka">Danimarka</option>
+<option value="Estonya">Estonya</option>
+<option value="Fas">Fas</option>
+<option value="Finlandiya">Finlandiya</option>
+<option value="Fransa">Fransa</option>
+<option value="Güney Afrika">Güney Afrika</option>
+<option value="Gürcistan">Gürcistan</option>
+<option value="Hollanda">Hollanda</option>
+<option value="Irak">Irak</option>
+<option value="Iran">Iran</option>
+<option value="Irlanda">Irlanda</option>
+<option value="Ispanya">Ispanya</option>
+<option value="Israil">Israil</option>
+<option value="Isveç">Isveç</option>
+<option value="Isviçre">Isviçre</option>
+<option value="Italya">Italya</option>
+<option value="Japonya">Japonya</option>
+<option value="Kanada">Kanada</option>
+<option value="Karadağ">Karadağ</option>
+<option value="Katar">Katar</option>
+<option value="Kazakistan">Kazakistan</option>
+<option value="Kirgizistan">Kirgizistan</option>
+<option value="Kore">Kore</option>
+<option value="Kosova">Kosova</option>
+<option value="Kuveyt">Kuveyt</option>
+<option value="Kuzey Kibris Türk Cumhuriyeti">Kuzey Kibris Türk Cumhuriyeti</option>
+<option value="Kuzey Makedonya">Kuzey Makedonya</option>
+<option value="Libya">Libya</option>
+<option value="Litvanya">Litvanya</option>
+<option value="Lübnan">Lübnan</option>
+<option value="Lüksemburg">Lüksemburg</option>
+<option value="Macaristan">Macaristan</option>
+<option value="Malezya">Malezya</option>
+<option value="Malta">Malta</option>
+<option value="Misir">Misir</option>
+<option value="Moldova">Moldova</option>
+<option value="Nijerya">Nijerya</option>
+<option value="Norveç">Norveç</option>
+<option value="Özbekistan">Özbekistan</option>
+<option value="Pakistan">Pakistan</option>
+<option value="Polonya">Polonya</option>
+<option value="Portekiz">Portekiz</option>
+<option value="Romanya">Romanya</option>
+<option value="Rusya Federasyonu">Rusya Federasyonu</option>
+<option value="Sirbistan">Sirbistan</option>
+<option value="Singapur">Singapur</option>
+<option value="Slovakya">Slovakya</option>
+<option value="Sudan">Sudan</option>
+<option value="Suudi Arabistan Kralliği">Suudi Arabistan Kralliği</option>
+<option value="Tanzanya">Tanzanya</option>
+<option value="Tayland">Tayland</option>
+<option value="Türkmenistan">Türkmenistan</option>
+<option value="Ukrayna">Ukrayna</option>
+<option value="Umman">Umman</option>
+<option value="Ürdün">Ürdün</option>
+<option value="Yeni Zelanda">Yeni Zelanda</option>
+<option value="Yunanistan">Yunanistan</option>
+    </select>
+  </div>
+
+  <div class="form-group mr-3">
+    <select id="konsolosluk-dropdown" class="form-control" disabled style="font-size: 20px; padding: 10px;">
+      <option value="">Konsolosluk</option>
+    </select>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <button id="submit-btn" class="btn btn-primary" disabled style="font-size: 20px; padding: 10px;">Demokrasi Şöleni Nerede?</button>
+    <p id="bilgi" class="ml-3" style="font-size: 20px;"></p>
+  </div>
+</div>
+
+
+  </embed>
+</center>
+
+
+
+
+<script>
+const ulkeDropdown = document.getElementById("ulke-dropdown");
+const konsoloslukDropdown = document.getElementById("konsolosluk-dropdown");
+const submitBtn = document.getElementById("submit-btn");
+const bilgi = document.getElementById("bilgi");
+
+const consulates = [
+{ ulke: "Almanya", konsolosluk: "Berlin Başkonsolosluğu", bilgi: "Heerstr.21, 14052 Berlin, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Düsseldorf Başkonsolosluğu", bilgi: "Willstätter Straβe 9, 40549 Düsseldorf, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Düsseldorf Başkonsolosluğu", bilgi: "Willstätter Straβe 9, 40549 Düsseldorf, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Essen Başkonsolosluğu", bilgi: "Essen Fuar ve Kongre Merkezi (Grugahalle) Messeplatz 2 45131 Essen, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Essen Başkonsolosluğu / Dortmund", bilgi: "Dortmund Türk Eğitim Merkezi (DOTEM) Nollendorfpl. 2 44339 Dortmund, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Essen Başkonsolosluğu / Siegen", bilgi: "Kongresszentrum Siegerlanhalle Koblenzer Strasse 151, 57072 Siegen - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Frankfurt Başkonsolosluğu", bilgi: "Kennedyallee 115-117 60596 Frankfurt am Main, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Frankfurt Başkonsolosluğu / Fulda", bilgi: "Familien Schule Fulda Gallasiniring 30, 36043 Fulda, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Frankfurt Başkonsolosluğu / Limburg", bilgi: "Limburg Westerwaldstrasse 86, 65549 Limburg, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Hamburg Başkonsolosluğu", bilgi: "Tesdorpfstrasse 18, 20148 Hamburg, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Hamburg Başkonsolosluğu / Kiel", bilgi: "Erich Kastner Weg 100, 24143 Kiel, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Hannover Başkonsolosluğu", bilgi: "Deutsche Messe AG Messegelände 30521 Hannover, Almanya 1 Tur: Convention Center Sall 1 - 2. Tur: Halle 18 - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Hannover Başkonsolosluğu / Bremen", bilgi: "Congress Bremen M3B GmbH Findorffstr. 101 28215 Bremen,Almanya 1. Tur: Halle 4 - 2. Tur: Halle 7 - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Karlsruhe Başkonsolosluğu", bilgi: "Rintheimer Str 82,76131, Karlsruhe, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Karlsruhe Başkonsolosluğu / Mannheim", bilgi: "1. Tur: Kulturhaus Kaefertal Gartenstrasse 8, 68309 Mannheim, Almanya 2. Tur: TSV Mannheim 1846 Hans Reschke Ufer 4a, 68165 Mannheim, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Kassel Başkonsolosluğu", bilgi: "Niestetalweg 6-8, 34123 Kassel, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Köln Başkonsolosluğu", bilgi: "Luxemburger Str. 285, 50354 Hürth, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Köln Başkonsolosluğu / Aachen", bilgi: "Zollernstraße 16, 52070 Aachen Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Mainz Başkonsolosluğu", bilgi: "An der Karlsschanze 7, 55131 Mainz, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Mainz Başkonsolosluğu  / Saarbrücken", bilgi: "Premier Inn Saarbrücken City Centre otel Faktoreistraße 2, 66111 Saarbrücken, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Münih Başkonsolosluğu", bilgi: "Karlsplatz 21-24, 80335, Münih, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Münster Başkonsolosluğu", bilgi: "Airportallee 1, 48268, Greven, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Münster Başkonsolosluğu / Bielefeld", bilgi: "Duisburgerstr. 25, 33647 Bielefeld, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Nürnberg Başkonsolosluğu", bilgi: "Steinbühler Str. 4-6, 90443 Nürnberg, Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Nürnberg Başkonsolosluğu / Regensburg", bilgi: "Junkersstrasse 9, 93055 Regensburg, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Stuttgart Başkonsolosluğu", bilgi: "Lorenzstrasse 11, 70435 Stuttgart-Zuffenhausen / Almanya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Almanya", konsolosluk: "Stuttgart Başkonsolosluğu / Ulm", bilgi: "Magirus-Deutz Straße 13, 89077, Ulm, Almanya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "Boston Başkonsolosluğu", bilgi: "31 Saint James Avenue, Suite #840, Boston, MA 02116, USA - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "Houston Başkonsolosluğu", bilgi: "5333 Westheimer Road, Suite 1050, Houston, TX 77056, ABD - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "Los Angeles Başkonsolosluğu", bilgi: "8500 Wilshire Blvd Suite No:900, Beverly Hills, CA 90211, ABD - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "Miami Başkonsolosluğu", bilgi: "80 SW 8th St. #2700 Miami,Florida, 33130, ABD - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "New York Başkonsolosluğu", bilgi: "Türkevi: 821 United Nations Plaza, 10017, New York City, NY, ABD - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "New York Başkonsolosluğu/Long Island", bilgi: "Holiday Inn Long Island - ISLIP Arpt East 1730 North Ocean Avenue, Holtsville, NY 11742, ABD - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "New York Başkonsolosluğu/South Jersey", bilgi: "Regal Banquet Hall - 1444 Route 73, Pennsauken, NJ 08110, ABD - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "Şikago Başkonsolosluğu", bilgi: "455 N. Cityfront Plaza Dr. Suite 2900 Chicago, IL 60611, ABD - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "A.B.D", konsolosluk: "Vaşington Büyükelçiliği", bilgi: "2525 Massachusetts Ave NW, Washington, DC 20008, ABD - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Arnavutluk", konsolosluk: "Tiran Büyükelçiliği", bilgi: "Rruga e Elbasanit No: 65, Tiran-Arnavutluk - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Avustralya", konsolosluk: "Kanberra Büyükelçiliği", bilgi: "6 Moonah Place, Yarralumla A.C.T. 2600 Avustralya - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Avustralya", konsolosluk: "Melburn Başkonsolosluğu", bilgi: "Level 8, 24 Albert Road, South Melbourne, Victoria, 3205, Avustralya - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Avustralya", konsolosluk: "Sidney Başkonsolosluğu", bilgi: "66 Ocean St Woollahra, NSW 2025, Sidney, Avustralya - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Avusturya", konsolosluk: "Bregenz Başkonsolosluğu", bilgi: "Sender Strasse 10, 6922 Wolfurt, Avusturya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Avusturya", konsolosluk: "Salzburg Başkonsolosluğu", bilgi: "Strubergasse 9, 5020 Salzburg Avusturya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Avusturya", konsolosluk: "Salzburg Başkonsolosluğu / Innsbruck", bilgi: "Congress Innsbruck, Rennweg 3, 6020 Innsbruck Avusturya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Avusturya", konsolosluk: "Salzburg Başkonsolosluğu / Linz", bilgi: "Volkshaus Ebelsberg, Kremsmünsterer Str. 1-3, 4030 Linz Avusturya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Avusturya", konsolosluk: "Viyana Başkonsolosluğu", bilgi: "Hietzinger Hauptstrasse 29, 1130 Viyana - Avusturya - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Avusturya", konsolosluk: "Viyana Başkonsolosluğu / Graz", bilgi: "Schmiedgasse 2, 8010 Graz - Avusturya - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Azerbaycan", konsolosluk: "Bakü Büyükelçiliği", bilgi: "Samed Vurgun Küçesi 134, Bakü, Azerbaycan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Azerbaycan", konsolosluk: "Gence Başkonsolosluğu", bilgi: "M.A. Abbaszade 6 Gence, Azerbaycan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Azerbaycan", konsolosluk: "Nahçıvan Başkonsolosluğu", bilgi: "Haydar Aliyev Cad., No: 17, Nahçıvan, Nahçıvan Özerk Cumhuriyeti, Azerbaycan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Bahreyn", konsolosluk: "Manama Büyükelçiliği", bilgi: "Villa No:924, Road No: 3219, Bu Ashira, Block 332             Manama - Bahreyn - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Belarus", konsolosluk: "Minsk Büyükelçiliği", bilgi: "Ulitsa Volodarskogo 6, Kat:4, Minsk 220030, Belarus - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Belçika", konsolosluk: "Anvers Başkonsolosluğu", bilgi: "ANTWERP EXPO, Jan van Rijswijcklaan, 191 - 2020 Antwerpen, Belçika - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Belçika", konsolosluk: "Anvers Başkonsolosluğu / Hasselt", bilgi: "TRIXXO ARENA, Park H-Gouverneur Verwilghensingel, 70 – 3500 Hasselt, Belçika - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Belçika", konsolosluk: "Brüksel Başkonsolosluğu", bilgi: "BRUSSELS EXPO, 1. Tur: Palais 3, Avenue Impératrice Charlotte 4, 1020 Brüksel, Belçika   2. Tur : BRUSSELS EXPO, Palais 8, Rue du Verregat 1, 1020 Brüksel - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Birleşik Arap Emirlikleri", konsolosluk: "Abu Dabi Büyükelçiliği", bilgi: "Embassy of the Republic of Türkiye Embassy’s Area, W59-02 /1, No:34, Abu Dabi - Birleşik Arap Emirlikleri - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Birleşik Arap Emirlikleri", konsolosluk: "Dubai Başkonsolosluğu", bilgi: "World Trade Center Building, 29th Floor, Dubai - Birleşik Arap Emirlikleri - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Bosna Hersek", konsolosluk: "Saraybosna Büyükelçiliği", bilgi: "Vilsonovo Setaliste bb, Saraybosna, Bosna-Hersek - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Bosna Hersek", konsolosluk: "Banja Luka Başkonsolosluğu", bilgi: "Branka Copića 6, 78000 Banja Luka, Bosna-Hersek - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Bosna Hersek", konsolosluk: "Mostar Başkonsolosluğu", bilgi: "Mala Tepa, 24, Mostar,   Bosna-Hersek - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Brezilya Federatif Cumhuriyeti", konsolosluk: "Brazilya Büyükelçiliği", bilgi: "Av. das Nações, Q.805, Lote 23, 70.452-900, Asa Sul, Brasília, DF, Brezilya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Brezilya Federatif Cumhuriyeti", konsolosluk: "Sao Paulo Başkonsolosluğu", bilgi: "Avenida Chedid Jafet 222, Conjunto 42, BlocoA, Vila Olimpia, Sao Paulo/SP, CEP 04551-065, Brezilya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Bulgaristan", konsolosluk: "Burgaz Başkonsolosluğu", bilgi: "Demokratsia Bulvarı No.38, 8000, Burgaz, Bulgaristan - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Bulgaristan", konsolosluk: "Filibe Başkonsolosluğu", bilgi: "Filip Makedonski 10, 4000, Filibe, Bulgaristan - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Bulgaristan", konsolosluk: "Sofya Büyükelçiliği", bilgi: "Vasil Levski Bulvarı No: 80, 1000, Sofya, Bulgaristan - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Büyük Britanya Ve Kuzey Irlanda Birleşik Kiralliği", konsolosluk: "Edinburg Başkonsolosluğu", bilgi: "39 Drumsheugh Gardens, Edinburgh EH3 7SW, Birleşik Krallık - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Büyük Britanya Ve Kuzey Irlanda Birleşik Kiralliği", konsolosluk: "Londra Başkonsolosluğu", bilgi: "1. TUR: Old Billingsgate (1 Old Billingsgate Walk, London EC3R 6DX, Birleşik Krallık)    2. TUR: London Hilton on Park Lane (22 Park Lane, London, W1K 1BE, Birleşik Krallık) - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Büyük Britanya Ve Kuzey Irlanda Birleşik Kiralliği", konsolosluk: "Manchester Başkonsolosluğu", bilgi: "14 Oxford Court, Manchester, M2 3WQ, Birleşik Krallık - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Büyük Britanya Ve Kuzey Irlanda Birleşik Kiralliği", konsolosluk: "Manchester Başkonsolosluğu / Leicester", bilgi: "Leicester Tigers Rugby Club, Director’s Lounge, Mattioli Woods Welford Road Stadium, Aylestone Road, Leicester, LE2 7TR,        Birleşik Krallık - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Cezayir", konsolosluk: "Cezayir Büyükelçiliği", bilgi: "21, Villa dar el-Ouard Chemin de la Rochelle Boulevard Colonel Bougara Alger-16000, Cezayir - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Çekya", konsolosluk: "Prag Büyükelçiliği", bilgi: "Sibiřské náměstí 730/1, 160 00 Prague 6, Çekya - Tarih: 3 Mayıs - 7 Mayıs" },
+{ ulke: "Çin Halk Cumhuriyeti", konsolosluk: "Guanco Başkonsolosluğu", bilgi: "Unit 23A-Development Center, No.3 Linjiang Dadao, Zhujiang New Town, Tianhe District, Guangzhou, Çin Halk Cumhuriyeti - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Çin Halk Cumhuriyeti", konsolosluk: "Hong Kong Başkonsolosluğu", bilgi: "Room 301, 3/F, Sino Plaza, 255-257 Gloucester Road, Causeway Bay, Hong Kong, Çin Halk Cumhuriyeti - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Çin Halk Cumhuriyeti", konsolosluk: "Pekin Büyükelçiliği", bilgi: "San Li Tun Dong 5 Jie No: 9 100600 Pekin, Çin Halk Cumhuriyeti - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Çin Halk Cumhuriyeti", konsolosluk: "Şanhay Başkonsolosluğu", bilgi: "SOHO Zhongshan Plaza, 1055 W Zhongshan Rd, 8F, Unit: 806-808, Changning District, 200051 Shanghai, Çin Halk Cumhuriyeti - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Danimarka", konsolosluk: "Kopenhag Büyükelçiliği", bilgi: "Vestagervej 16, 2100, Kopenhag, Danimarka - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Danimarka", konsolosluk: "Kopenhag Büyükelçiliği / Aarhus", bilgi: "Radisson Blu Scandinavia Hotel Margrethepladsen 1, 8000, Aarhus, Danimarka - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Estonya", konsolosluk: "Tallin Büyükelçiliği", bilgi: "Narva mnt 30, 10120 Tallin, Estonya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Fas", konsolosluk: "Rabat Büyükelçiliği", bilgi: "Abdelkrim Benjelloun Caddesi, No:7 10010 Rabat, Fas - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Finlandiya", konsolosluk: "Helsinki Büyükelçiliği", bilgi: "Albertinkatu 27 A, 00180 Helsinki, Finlandiya - Tarih: 1 Mayıs - 7 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Bordo Başkonsolosluğu", bilgi: "29 Allées de Chartres 33000 Bordeaux, Fransa - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Liyon Başkonsolosluğu", bilgi: "Lyon DİTİB, 72 Rue Paul et Marc Barbezat 69150 Decines-Charpieu Lyon, Fransa - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Liyon Başkonsolosluğu / Clermont-Ferrand", bilgi: "Anatolia Parc, Le Petit Orcet 63670 Orcet, Clermont-Ferrand, Fransa - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Marsilya Başkonsolosluğu", bilgi: "Marseille Chanot, Palais Des Congrès Et Des Expositions - SAFIM, Palais de la Méditerranée, Rond Point du Prado, 13008 Marsilya, Fransa - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Nant Başkonsolosluğu", bilgi: "20 Quai François Mitterrand, 44200 Nantes, Fransa - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Paris Başkonsolosluğu", bilgi: "44 Rue de Sevres, 92100, Boulogne-Billancourt, Fransa - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Paris Başkonsolosluğu / Orleans", bilgi: "Espace Chantemelles, Pole 45 Rue Des Chantemelles, 45140 Ingre Orleans, Fransa - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Strazburg Başkonsolosluğu", bilgi: "3 Rue Toreau, 67000, Strasbourg, Fransa - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Fransa", konsolosluk: "Strazburg Başkonsolosluğu / Mulhouse", bilgi: "Gymnase Nordfeld, 43 Avenue Alphonse Juin, 68100, Mulhouse, Fransa - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Güney Afrika", konsolosluk: "Pretorya Büyükelçiliği", bilgi: "573 Fehrsen St. Nieuw Mucklenuck, Pretorya, Güney Afrika Cumhuriyeti - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Güney Afrika", konsolosluk: "Cape Town Başkonsolosluğu", bilgi: "Century City Konferans Merkezi No.4 Energy Lane, Bridgeways Precinct, Century City, 7441, Cape Town, Güney Afrika Cumhuriyeti - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Gürcistan", konsolosluk: "Batum Başkonsolosluğu", bilgi: "Ninoshvili Caddesi, No. 9, Batum, Gürcistan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Gürcistan", konsolosluk: "Tiflis Büyükelçiliği", bilgi: "Ilia Chavchavadze Avenue 35, Tiflis, Gürcistan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Hollanda", konsolosluk: "Amsterdam Başkonsolosluğu", bilgi: "1.TUR: RAI Fuar ve Kongre Merkezi, Europaplein 24, 1078 GZ, Amsterdam, Hollanda 2.TUR: Rhone Etkinlik ve Kongre Merkezi Rhoneweg 12-14, 1043 AH, Amsterdam, Hollanda - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Hollanda", konsolosluk: "Deventer Başkonsolosluğu", bilgi: "De Scheg Spor Merkezi, Piet van Donkplein 1, 7422 LW Deventer, Hollanda - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Hollanda", konsolosluk: "Rotterdam Başkonsolosluğu", bilgi: "GIA Trade & Exhibition Centre, De Werf 11 2544 EH Lahey, Hollanda - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Hollanda", konsolosluk: "Rotterdam Başkonsolosluğu / Eindhoven", bilgi: "Van der Valk Hotel, Aalsterweg 322, 5644 RL Eindhoven, Hollanda - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Irak", konsolosluk: "Bağdat Büyükelçiliği", bilgi: "Karadat Maryam - International Zone (Green Zone) 406/4213 10001 Bağdat, Irak - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Irak", konsolosluk: "Erbil Başkonsolosluğu", bilgi: "Gulan Caddesi, Ster Binası, Zemin Kat, Erbil, Irak - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Irak", konsolosluk: "Basra Başkonsolosluğu", bilgi: "Al Vufud Str. Al Mishraq Al Qadim Basrah - Irak - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Iran", konsolosluk: "Tahran Büyükelçiliği", bilgi: "Büyükelçilik Yerleşkesi İçinde Yer Alan Türk Okulu: No 337 Ferdowsi Caddesi PK 1144643463 Tahran, İran - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Iran", konsolosluk: "Tebriz Başkonsolosluğu", bilgi: "Kuye Vale Asr Khiyabani Forughi Falakai Homafar Kuçe-i Farhangian No:8 Tebriz, İran - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Iran", konsolosluk: "Meşhed Başkonsolosluğu", bilgi: "Bulvar-i Sajjad, Khyaban-i Gelayol No: 45 Meşhed, İran - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Irlanda", konsolosluk: "Dublin Büyükelçiliği", bilgi: "8 Raglan Road, Ballsbridge, Dublin 4, D04 EA36, İrlanda - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Ispanya", konsolosluk: "Barselona Başkonsolosluğu", bilgi: "Passeig de Gracia,7/1, Barselona, İspanya - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Ispanya", konsolosluk: "Madrid Büyükelçiliği", bilgi: "Calle de Rafael Calvo, 18, 2A-B, Madrid, İspanya - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Israil", konsolosluk: "Tel Aviv Büyükelçiliği", bilgi: "Hayarkon 202, 6340507, Tel Aviv, İsrail - Tarih: 3 Mayıs - 7 Mayıs" },
+{ ulke: "Isveç", konsolosluk: "Stokholm Büyükelçiliği", bilgi: "Stockholmsmässan Fuar Alanı, Mässvägen 1, 125 30 Älvsjö, Stokholm, İsveç - Tarih: 1 Mayıs - 7 Mayıs" },
+{ ulke: "Isviçre", konsolosluk: "Bern Büyükelçiliği", bilgi: "Lombachweg 33, 3006 Bern, İsviçre - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Isviçre", konsolosluk: "Cenevre Başkonsolosluğu", bilgi: "20, Route de Pré-Bois, 1215 Genève (International Center Cointrin-ICC, Giriş Kat), Cenevre, İsviçre - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Isviçre", konsolosluk: "Zürih Başkonsolosluğu", bilgi: "Messe Zürich- Wallisellenstrasse 49, 8050 Zürih, İsviçre - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Italya", konsolosluk: "Milano Başkonsolosluğu", bilgi: "Via Antonio Canova 36 20145, Milano, İtalya - Tarih: 3 Mayıs - 7 Mayıs" },
+{ ulke: "Italya", konsolosluk: "Roma Büyükelçiliği", bilgi: "Via Palestro 28, 00185, Roma, İtalya - Tarih: 3 Mayıs - 7 Mayıs" },
+{ ulke: "Japonya", konsolosluk: "Tokyo Büyükelçiliği", bilgi: "Tokyo, Shibuya-ku, Jingumae, 2-33-6, 150-0001 Japonya - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Japonya", konsolosluk: "Nagoya Başkonsolosluğu", bilgi: "Aichi, Nagoya, Naka-ku, Sakae 3-21-23 KS İseya Bldg 4F, 460-0008 Japonya - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Kanada", konsolosluk: "Montreal Başkonsolosluğu", bilgi: "1000 Sherbrooke Street West, Suite 1300, Montreal, QC, H3A 3G4, Kanada - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Kanada", konsolosluk: "Ottava Büyükelçiliği", bilgi: "197 Wurtemburg St, Ottawa, ON K1N 8L9, Kanada - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Kanada", konsolosluk: "Toronto Başkonsolosluğu", bilgi: "10 Lower Spadina Avenue, Suite: 300 Toronto, ON M5V 2Z2, Kanada - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Kanada", konsolosluk: "Vancouver Başkonsolosluğu", bilgi: "303-1111 West Georgia Street, Vancouver V6E 4M3, Kanada - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Karadağ", konsolosluk: "Podgoritsa Büyükelçiliği", bilgi: "Radosava Burica b.b. (Do Codre) 81000 Podgoritsa, Karadağ - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Katar", konsolosluk: "Doha Büyükelçiliği", bilgi: "Zone 66 Street 905 Building 149 Doha, Katar - Tarih: 1 Mayıs - 7 Mayıs" },
+{ ulke: "Kazakistan", konsolosluk: "Nur-Sultan Büyükelçiliği", bilgi: "Taşenov Caddesi, No: 3 010000 Astana, Kazakistan - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Kazakistan", konsolosluk: "Almatı Başkonsolosluğu", bilgi: "Tole Bi Caddesi, No: 29, Almatı, Kazakistan - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Kazakistan", konsolosluk: "Aktau Başkonsolosluğu", bilgi: "15. Mikrorayon No:56 130000 Samal / Aktau, Kazakistan - Tarih: 4 Mayıs - 7 Mayıs" },
+{ ulke: "Kirgizistan", konsolosluk: "Bişkek Büyükelçiliği", bilgi: "Moskovskaya 89, Bişkek, Kırgızistan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Kore", konsolosluk: "Seul Büyükelçiliği", bilgi: "40, Dongho-ro, 20 Na-gil, Jung-Gu Seoul 04606  Kore Cumhuriyeti - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Kosova", konsolosluk: "Priştine Büyükelçiliği", bilgi: "Rr. İsmail Qemaili No:90 Arberia Priştine, Kosova - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Kosova", konsolosluk: "Prizren Başkonsolosluğu", bilgi: "Remzi Ademaj Cad. No:46, 20000 Prizren, Kosova - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Kuveyt", konsolosluk: "Kuveyt Büyükelçiliği", bilgi: "Embassies Area, Plot 16, Istiqlal Street, Daiyah Block 5, 35301, Kuveyt - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Kuzey Kibris Türk Cumhuriyeti", konsolosluk: "Lefkoşa Büyükelçiliği", bilgi: "Atatürk Spor Salonu, Dr. Fazıl Küçük Bulvarı, Lefkoşa, KKTC - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Kuzey Kibris Türk Cumhuriyeti", konsolosluk: "Lefkoşa Büyükelçiliği / Güzelyurt", bilgi: "Dr. Fazıl Küçük Spor Salonu (eski adı Güzelyurt Spor Salonu), Güzelyurt, KKTC - Tarih: 29 Nisan - 1 Mayıs" },
+{ ulke: "Kuzey Kibris Türk Cumhuriyeti", konsolosluk: "Gazimağusa Başkonsolosluğu", bilgi: "Doğu Akdeniz Üniversitesi Lala Mustafa Paşa Spor Sarayı Gazimağusa, KKTC - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Kuzey Makedonya", konsolosluk: "Üsküp Büyükelçiliği", bilgi: "Ul. Slavej Planina -BB, 1000 Üsküp,  Kuzey Makedonya - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Libya", konsolosluk: "Trablus Büyükelçiliği", bilgi: "Shara Zaviya Dahmani, P.O.Box: 947 Trablus, Libya - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Libya", konsolosluk: "Misurata Başkonsolosluğu", bilgi: "Gzair Bölgesi (11 Temmuz) Almuzdawaj Aljadid Caddesi (Omar Almuktar Okulu yanı) Posta Kutusu: 3049, Misurata, Libya - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Litvanya", konsolosluk: "Vilnius Büyükelçiliği", bilgi: "Didzioji gatve 37, LT-01128, Vilnius, Litvanya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Lübnan", konsolosluk: "Beyrut Büyükelçiliği", bilgi: "Rabıeh Zone 2, 1st Street, Matn Beyrut, Lübnan - Tarih: 1 Mayıs - 7 Mayıs" },
+{ ulke: "Lüksemburg", konsolosluk: "Lüksemburg Büyükelçiliği", bilgi: "49, rue Siggy vu Lëtzebuerg, L-1933, Lüksemburg - Tarih: 27 Nisan - 9 Mayıs" },
+{ ulke: "Macaristan", konsolosluk: "Budapeşte Büyükelçiliği", bilgi: "Andrassy Ut 123, 1062 Budapeşte, Macaristan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Malezya", konsolosluk: "Kuala Lumpur Büyükelçiliği", bilgi: "18. Kat, Menara Tan&Tan, 207, Jalan Tun Razak, 50450       Kuala Lumpur, Malezya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Malta", konsolosluk: "Valetta Büyükelçiliği", bilgi: "35, Sir Luigi Preziosi Square    FRN-1154, Floriana, Malta - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Misir", konsolosluk: "İskenderiye Başkonsolosluğu", bilgi: "11 Kamel El Kilani St. Bab Sharky İskenderiye, Mısır - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Misir", konsolosluk: "Kahire Büyükelçiliği", bilgi: "25, El-Falaky Str. Bab El-Louk, Kahire, Mısır - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Moldova", konsolosluk: "Kişinev Büyükelçiliği", bilgi: "Str. Alexei Mateevici, 55, Kişinev, Moldova - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Moldova", konsolosluk: "Komrat Başkonsolosluğu", bilgi: "Str. Lenin, nr. 238, Komrat - Moldova - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Nijerya", konsolosluk: "Abuja Büyükelçiliği", bilgi: "Plot:333, Diplomatic Drive, Central Business District, Abuja, Nijerya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Norveç", konsolosluk: "Oslo Büyükelçiliği", bilgi: "Halvdan Svartes Gate 5, 0268, Oslo, Norveç - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Özbekistan", konsolosluk: "Taşkent Büyükelçiliği", bilgi: "Akademik Yahya Gulyamov Ko’chasi No: 87, Taşkent, Özbekistan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Özbekistan", konsolosluk: "Semerkant Başkonsolosluğu", bilgi: "Pushkin ko’chasi No:4 Semerkant, Özbekistan - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Pakistan", konsolosluk: "İslamabad Büyükelçiliği", bilgi: "Street 1, Diplomatic Enclave, G5 44000 Islamabad, Pakistan - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Pakistan", konsolosluk: "Karaçi Başkonsolosluğu", bilgi: "Saba Avenue ST-18, Clifton Block – 4, Karaç, Pakistan - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Pakistan", konsolosluk: "Lahor Başkonsolosluğu", bilgi: "No.98, Block C-2, Gulberg 3, Lahor, Pakistan - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Polonya", konsolosluk: "Varşova Büyükelçiliği", bilgi: "UL. Rakowiecka 19, 02-517 Varşova, Polonya - Tarih: 3 Mayıs - 7 Mayıs" },
+{ ulke: "Portekiz", konsolosluk: "Lizbon Büyükelçiliği", bilgi: "Avenida das Descobertas, 22 Restelo 1400-092 Lizbon, Portekiz - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Romanya", konsolosluk: "Bükreş Büyükelçiliği", bilgi: "Calea Dorobanți 72, București 010575, Romanya - Tarih: 3 Mayıs - 7 Mayıs" },
+{ ulke: "Romanya", konsolosluk: "Köstence Başkonsolosluğu", bilgi: "B-Dul Ferdinand Nr 82, Köstence, Romanya - Tarih: 3 Mayıs - 7 Mayıs" },
+{ ulke: "Rusya Federasyonu", konsolosluk: "Kazan Başkonsolosluğu", bilgi: "Ulitsa Maksima Gorkogo 23/27, Kazan, Tataristan, Rusya Federasyonu - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Rusya Federasyonu", konsolosluk: "Moskova Büyükelçiliği", bilgi: "7. Rostovskiy Pereulok No:12 Moskova, Rusya Federasyonu - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Rusya Federasyonu", konsolosluk: "Novorossisk Başkonsolosluğu", bilgi: "Ulitsa Svabodı No:73, Novorossisk, Rusya Federasyonu - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Rusya Federasyonu", konsolosluk: "St.Petersburg Başkonsolosluğu", bilgi: "7.Sovetskaya Ulitsa No:24 St.Petersburg, Rusya Federasyonu - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Sirbistan", konsolosluk: "Belgrad Büyükelçiliği", bilgi: "Krunska 3, 11000 Belgrad, Sırbistan - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Sirbistan", konsolosluk: "Yeni Pazar Başkonsolosluğu", bilgi: "Sutjeska 1, Novi Pazar 36300,    Yeni Pazar, Sırbistan - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Singapur", konsolosluk: "Singapur Büyükelçiliği", bilgi: "2 Shenton Way, SGX Centre Tower 1, No: 10-03, Singapore 068804 - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Slovakya", konsolosluk: "Bratislava Büyükelçiliği", bilgi: "Holubyho 11, 811 03 Bratislava, Slovakya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Sudan", konsolosluk: "Hartum Büyükelçiliği", bilgi: "House No:21, Block No: 8H, Baladia Str. P.O. Box: 771, Hartum, Sudan - Tarih: 5 Mayıs - 6 Mayıs" },
+{ ulke: "Suudi Arabistan Kralliği", konsolosluk: "Cidde Başkonsolosluğu", bilgi: "4019 Arafat Al-Hamra Unit No: 11 Jeddah 23324-7910 Saudi Arabia - P.O. Box 70 Jeddah 21411, Cidde, Suudi Arabistan - Tarih: 1 Mayıs - 7 Mayıs" },
+{ ulke: "Suudi Arabistan Kralliği", konsolosluk: "Riyad Büyükelçiliği", bilgi: "Diplomatik Bölge, Abdullah Ibn Hudhafah As Sahmi Cad. No:8606 PK: 3732, Riyad, 12523, Suudi Arabistan - Tarih: 1 Mayıs - 7 Mayıs" },
+{ ulke: "Tanzanya", konsolosluk: "Darüsselam Büyükelçiliği", bilgi: "P O Box : 21761 Dar es Salaam, Toure Drive 8 Oysterbay Darüsselam, Tanzanya - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Tayland", konsolosluk: "Bangkok Büyükelçiliği", bilgi: "1601, 1617, 1617/1, 16th Floor, Tower I, Empire Tower, 1 South Sathorn Rd, Yan Nawa, Sathorn, Bangkok 10120, Tayland - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Türkmenistan", konsolosluk: "Aşkabat Büyükelçiliği", bilgi: "Göroglu 59, 744000, Aşkabat, Türkmenistan - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Ukrayna", konsolosluk: "Kiev Büyükelçiliği", bilgi: "Panasa Myrnoho Str. No:22, 01011, Kiev, Ukrayna - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Ukrayna", konsolosluk: "Odessa Başkonsolosluğu", bilgi: "Leontovycha Sk., 5, 65054 Odessa, Ukrayna - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Umman", konsolosluk: "Muskat Büyükelçiliği", bilgi: "Way No: 3042, Building No: 3270 Shatti Al Qurum – Muskat, Umman - Tarih: 5 Mayıs - 6 Mayıs" },
+{ ulke: "Ürdün", konsolosluk: "Amman Büyükelçiliği", bilgi: "Abbas Mahmoud Al-Aqqad St.31 Jabal Amman 11181 Amman, Ürdün - Tarih: 5 Mayıs - 7 Mayıs" },
+{ ulke: "Yeni Zelanda", konsolosluk: "Wellington Büyükelçiliği", bilgi: "Level 12, 15-17 Murphy Street, Thorndon, Wellington 6011,    Yeni Zelanda - Tarih: 6 Mayıs - 7 Mayıs" },
+{ ulke: "Yunanistan", konsolosluk: "Atina-Pire Başkonsolosluğu", bilgi: "Vasileos Pavlou 22, Paleo Psychico, 15452 Atina, Yunanistan - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Yunanistan", konsolosluk: "Gümülcine Başkonsolosluğu", bilgi: "Odos Ionon 14, 69100, Komotini, Yunanistan - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Yunanistan", konsolosluk: "Rodos Başkonsolosluğu", bilgi: "Iroon Politechniou No: 10-12 85100 Rhodes, Yunanistan - Tarih: 29 Nisan - 7 Mayıs" },
+{ ulke: "Yunanistan", konsolosluk: "Selanik Başkonsolosluğu", bilgi: "Odos Agiou Dimitriou 151, 54634 Selanik, Yunanistan - Tarih: 29 Nisan - 7 Mayıs" },
+];
+
+
+
+
+
+// Populate the consulate dropdown based on the selected country
+ulkeDropdown.addEventListener("change", () => {
+// Clear any previous options
+konsoloslukDropdown.innerHTML = "<option value=''>Konsolosluk</option>";
+
+// Get the selected country
+const selectedUlke = ulkeDropdown.value;
+
+// Filter the consulates based on the selected country
+const filteredConsulates = consulates.filter((consulate) => {
+return consulate.ulke === selectedUlke;
+});
+
+// Populate the consulate dropdown with the filtered consulates
+filteredConsulates.forEach((consulate) => {
+const option = document.createElement("option");
+option.text = consulate.konsolosluk;
+option.value = consulate.konsolosluk;
+konsoloslukDropdown.add(option);
+});
+
+// Enable/disable the consulate dropdown and submit button based on whether a country is selected
+konsoloslukDropdown.disabled = !selectedUlke;
+submitBtn.disabled = !selectedUlke;
+});
+
+// Show bilgi for selected country and consulate
+submitBtn.addEventListener("click", () => {
+// Get the selected country and consulate
+const selectedUlke = ulkeDropdown.value;
+const selectedKonsolosluk = konsoloslukDropdown.value;
+
+// Find the matching consulate and display the bilgi
+const matchingConsulate = consulates.find((consulate) => {
+return consulate.ulke === selectedUlke && consulate.konsolosluk === selectedKonsolosluk;
+});
+
+if (matchingConsulate) {
+bilgi.textContent = matchingConsulate.bilgi;
+} else {
+bilgi.textContent = "No consulate found";
+}
+});
+</script>

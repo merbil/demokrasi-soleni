@@ -328,7 +328,7 @@ const consulates = [
 // Populate the consulate dropdown based on the selected country
 ulkeDropdown.addEventListener("change", () => {
 // Clear any previous options
-konsoloslukDropdown.innerHTML = "<option value=''>Konsolosluk</option>";
+konsoloslukDropdown.innerHTML = "<option value=''>Temsilcilik</option>";
 
 // Get the selected country
 const selectedUlke = ulkeDropdown.value;
@@ -365,7 +365,7 @@ return consulate.ulke === selectedUlke && consulate.konsolosluk === selectedKons
 if (matchingConsulate) {
 bilgi.textContent = matchingConsulate.bilgi;
 } else {
-bilgi.textContent = "Lütfen konsolosluk seçin. (konsolosluk seçmeden butonu inaktif yapmayı beceremedim) ";
+bilgi.textContent = "Lütfen temsilcilik seçin. (bunu seçmeyince butonu inaktif tutmayı beceremedim) ";
 }
 });
 </script>

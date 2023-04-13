@@ -7,6 +7,7 @@
       /* CSS rules go here */
       body {
         text-align: center;
+        font-family: arial;
       }
       h1, p {
         margin: 0 auto;
@@ -17,9 +18,9 @@
   <body>
     <h1><br>Gurbetçilere dev hizmet!</h1>
     <br><br>
-    Hangi tarihlerde, nerede oy kullanacağınızı YSK'nın pdf'lerinde aramayın, yazıktır.
+    Hangi tarihlerde, nerede oy kullanacağınızı YSK'nın pdf'lerinde aramayın, gözlerinize yazık.
     <br><br>
-    Tüm bilgiler <a href="https://www.ysk.gov.tr/doc/dosyalar/docs/14Mayis2023/2023_CB_MV_yurt_disi_secmeni_oy_kullanma%20_yerleri.pdf" target="_blank">YSK'nın linkteki dosyasından</a> alınmıştır. Eğer bir hata olduğunu düşünüyorsanız <a href="https://twitter.com/erbilm" target="_blank">twitter</a> üzerinden bana ulaşabilirsiniz. <br><br><br>
+    <br>
   </body>
 </html>
 
@@ -114,7 +115,7 @@
   </div>
 <br>
   <div class="d-flex align-items-center justify-content-center">
-    <button id="submit-btn" class="btn btn-primary" disabled style="font-size: 20px; padding: 10px;">Demokrasi Şöleni Nerede?</button>
+    <button id="submit-btn" class="btn btn-primary" disabled style="font-size: 20px; padding: 10px;"><b>Demokrasi Şöleni Nerede?</b></button>
     <p id="bilgi" class="ml-3" style="font-size: 20px;"></p>
   </div>
 </div>
@@ -355,12 +356,12 @@ return consulate.ulke === selectedUlke && consulate.konsolosluk === selectedKons
 if (matchingConsulate) {
 bilgi.textContent = matchingConsulate.bilgi;
 } else {
-bilgi.textContent = "No consulate found";
+bilgi.textContent = "Lütfen konsolosluk seçin. (konsolosluk seçmeden butonu inaktif yapmayı beceremedim) ";
 }
 });
 </script>
 
- <br><br>--<br><br>
+ <br><br><br><br>
  
  <div>
      <style>p 
@@ -381,13 +382,14 @@ bilgi.textContent = "No consulate found";
       }
      </style>
     <div class="center">
-      <p>Fi tarihinden kalan içler acısı HTML bilgim ve sevgili ChatGPT'nin yardımıyla, 2-3 saat içinde ve (sanırım) 1999 standartlarında hazırlanmıştır <i>(evet, graphic design is my passion)</i>.</p>
-      <p><br>İkinci tur tarihlerini özellikle koymadım, seçim sarkarsa hallederiz.</p>
+      <p>Fi tarihinden kalan içler acısı HTML bilgim ve sevgili ChatGPT'nin yardımıyla, 2-3 saat içinde ve (sanırım) 1999 yılının web standartlarında hazırlanmıştır <i>(evet, graphic design is my passion)</i>.</p>
+      <p><br>İkinci tur tarihlerini özellikle koymadım, seçim sarkarsa hallederiz :)</p>
       
-      <p><br>  Son olarak, daha eli yüzü düzgün bir şey yapmak isteyen çıkarsa kullandığım CSV dosyası da <a href="https://www.github.com/merbil/demokrasi-soleni/adreslistesi.csv">burada</a>.
+      <p><br>  Son olarak, daha eli yüzü düzgün bir şey yapmak isteyen varsa, YSK'nın pdf'inden hazırladığım .csv dosyası da <a href="https://www.github.com/merbil/demokrasi-soleni/adreslistesi.csv">burada</a>.
           
       </p>
       <p><br>
           Oy kullanmayı unutmayın, Hollanda'dan selamlar!
       </p>
+      <p><br>--<br><i>Tüm bilgiler <a href="https://www.ysk.gov.tr/doc/dosyalar/docs/14Mayis2023/2023_CB_MV_yurt_disi_secmeni_oy_kullanma%20_yerleri.pdf" target="_blank">YSK'nın açıkladığı dosyadan</a> alınmıştır. Eğer bir hata olduğunu düşünüyorsanız <a href="https://twitter.com/erbilm" target="_blank">twitter</a> üzerinden bana ulaşabilirsiniz. <br><br></i></p>
     </div>
